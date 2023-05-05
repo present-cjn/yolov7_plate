@@ -13,7 +13,20 @@
 **11 双层农用车牌**
 **12 民航车牌**
 
-**测试demo:**
+## **prepare**
+```shell
+conda create -n yolov7_plate python=3.10.11
+conda activate yolov7_plate
+pip install -r ruquirements.txt
+```
+这里可以进入python确认一下cuda和cudnn版本
+```python
+import torch
+print(torch.version.cuda) # 11.7
+print(torch.backends.cudnn.version()) # 8500
+```
+
+## **测试demo**
 以yolov7-lite-s 为例:
 ```
 python detect_rec_plate.py --detect_model weights/yolov7-lite-s.pt  --rec_model weights/plate_rec.pth --source imgs --output result
